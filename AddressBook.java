@@ -100,7 +100,7 @@ public class AddressBook {
                         case 6:
                             System.out.println("zip:");
                             Scanner user = new Scanner(System.in);
-                            person.Zip()= user.nextLine();
+                            person.Zip() = user.nextLine();
                             System.out.println("edited succesfully");
                             break;
                         case 7:
@@ -120,7 +120,24 @@ public class AddressBook {
             }
             if (flag == 0)
                 System.out.println("Contact not found!!!");
-        }
+            public void deleteContact () {
 
+            System.out.println("Enter the person whose contact to be deleted :");
+            System.out.println("Enter First Name:");
+            String fname = sc.nextLine();
+            System.out.println("Enter Last Name:");
+            String lname = sc.nextLine();
+
+            for (int j = 0; j < people.size(); j++) {
+                Contact person = people.get(j);
+                if (person.firstName.equals(fname) && person.lastName.equals(lname)) {
+                    people.remove(person);
+                    System.out.println("person removed sucessfully");
+                } else {
+                    System.out.println("contact not matched");
+                }
+            }
+        }
+        }
     }
 }
